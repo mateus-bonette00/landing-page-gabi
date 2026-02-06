@@ -1,0 +1,19 @@
+.section {
+  padding-top: var(--spacing-4xl);
+  padding-bottom: var(--spacing-4xl);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+}
+
+.white {
+  background-color: var(--color-base);
+}
+
+.light {
+  background-color: var(--color-background);
+}
