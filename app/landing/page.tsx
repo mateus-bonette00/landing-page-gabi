@@ -10,7 +10,6 @@ import Card from '@/components/Card';
 import VideoBlock from '@/components/VideoBlock';
 import TestimonialsCarousel from '@/components/TestimonialsCarousel';
 import FAQ from '@/components/FAQ';
-import StickyMobileCTA from '@/components/StickyMobileCTA';
 import { getQuizProfile } from '@/lib/storage';
 import { generatePersonalizedContent, QuizProfile } from '@/lib/profile';
 import { trackViewLanding, trackCTAClick, trackPurchaseClick } from '@/lib/tracking';
@@ -28,7 +27,7 @@ export default function LandingPage() {
       'Videoaulas profissionais e detalhadas',
       'Resultados comprovados e duradouros'
     ],
-    seal: 'Programa Completo de Pilates Online'
+    seal: 'Desafio Pilates 8 GX: Transformação em Casa'
   });
 
   // Cronômetro de 3 horas
@@ -386,7 +385,7 @@ export default function LandingPage() {
 
       {/* Oferta e Preço */}
       <Section id="oferta" background="light">
-        <h2 className={styles.sectionTitle}>Curso Completo de Pilates Online</h2>
+        <h2 className={styles.sectionTitle}>Desafio Pilates 8 GX: Transformação em Casa</h2>
 
         {/* Cronômetro de Desconto */}
         <div className={styles.countdownWrapper}>
@@ -529,8 +528,6 @@ export default function LandingPage() {
         </Container>
       </footer>
 
-      {/* Sticky Mobile CTA */}
-      <StickyMobileCTA text="Quero Acesso" onClick={handlePurchase} />
     </>
   );
 }

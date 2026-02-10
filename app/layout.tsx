@@ -3,8 +3,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
-  title: "Gabi Xavier | Studio de Pilates e Fisioterapia",
-  description: "Transforme seu corpo e sua saúde com o método Pilates. Curso online completo de exercícios de Pilates com acompanhamento profissional.",
+  title: "Desafio Pilates 8 GX: Transformação em Casa | Gabi Xavier",
+  description: "Desafio Pilates 8 GX: Transformação em Casa. Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
 };
 
 export default function RootLayout({
