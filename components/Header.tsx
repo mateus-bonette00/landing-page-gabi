@@ -11,15 +11,14 @@ export default function Header() {
           <div className={styles.logo}>
             <Image
               src="/logo-gabi-xavier.png"
-              alt="Gabi Xavier - Studio de Pilates e Fisioterapia"
+              alt="Desafio Pilates 8 GX: Transformação em Casa"
               width={80}
               height={80}
               className={styles.logoImage}
               priority
             />
             <div className={styles.logoTextContainer}>
-              <h1 className={styles.logoText}>Gabi Xavier</h1>
-              <p className={styles.logoSubtext}>Studio de Pilates e Fisioterapia</p>
+              <h1 className={styles.logoText}>Desafio Pilates 8 GX: Transformação em Casa</h1>
             </div>
           </div>
         </div>
