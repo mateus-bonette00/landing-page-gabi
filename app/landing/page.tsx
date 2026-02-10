@@ -15,7 +15,8 @@ import { getQuizProfile } from '@/lib/storage';
 import { generatePersonalizedContent, QuizProfile } from '@/lib/profile';
 import { trackViewLanding, trackCTAClick, trackPurchaseClick } from '@/lib/tracking';
 import { CHECKOUT_URL } from '@/config/urls';
-import { BookIcon, VideoIcon, ClockIcon, TrendingUpIcon, InfinityIcon, UsersIcon, ShieldIcon, CheckIcon, ZapIcon } from '@/components/Icons';
+import { BookIcon, VideoIcon, ClockIcon, TrendingUpIcon, InfinityIcon, UsersIcon, ShieldIcon, CheckIcon, ZapIcon, StarIcon, MessageIcon, GiftIcon } from '@/components/Icons';
+import Image from 'next/image';
 
 export default function LandingPage() {
   const router = useRouter();
@@ -337,21 +338,39 @@ export default function LandingPage() {
         <div className={styles.exercisesGrid}>
           <Card hover>
             <div className={styles.exerciseImage}>
-              <div className={styles.exercisePlaceholder}>🧘‍♀️</div>
+              <Image
+                src="/hundred.jpeg"
+                alt="Exercício Hundred - Fortalecimento do core"
+                width={400}
+                height={300}
+                className={styles.exerciseImg}
+              />
             </div>
             <h4>Hundred</h4>
             <p>Exercício clássico para fortalecimento do core e aquecimento</p>
           </Card>
           <Card hover>
             <div className={styles.exerciseImage}>
-              <div className={styles.exercisePlaceholder}>💪</div>
+              <Image
+                src="/roll-up.jpeg"
+                alt="Exercício Roll Up - Flexibilidade da coluna"
+                width={400}
+                height={300}
+                className={styles.exerciseImg}
+              />
             </div>
             <h4>Roll Up</h4>
             <p>Fortalece abdômen e melhora flexibilidade da coluna</p>
           </Card>
           <Card hover>
             <div className={styles.exerciseImage}>
-              <div className={styles.exercisePlaceholder}>🦵</div>
+              <Image
+                src="/single-leg-stretch.jpeg"
+                alt="Exercício Single Leg Stretch - Core e coordenação"
+                width={400}
+                height={300}
+                className={styles.exerciseImg}
+              />
             </div>
             <h4>Single Leg Stretch</h4>
             <p>Trabalha core, coordenação e estabilidade</p>
@@ -367,29 +386,36 @@ export default function LandingPage() {
 
       {/* Oferta e Preço */}
       <Section id="oferta" background="light">
-        <div className={styles.offerContainer}>
-          <Card className={styles.offerCard}>
-            <h2 className={styles.offerTitle}>Curso Completo de Pilates Online</h2>
+        <h2 className={styles.sectionTitle}>Curso Completo de Pilates Online</h2>
 
-            {/* Cronômetro de Desconto */}
-            <div className={styles.countdown}>
-              <div className={styles.countdownTitle}>
-                <ZapIcon size={20} className={styles.zapIcon} /> Oferta por Tempo Limitado <ZapIcon size={20} className={styles.zapIcon} />
+        {/* Cronômetro de Desconto */}
+        <div className={styles.countdownWrapper}>
+          <div className={styles.countdown}>
+            <div className={styles.countdownTitle}>
+              <ZapIcon size={20} className={styles.zapIcon} /> Oferta por Tempo Limitado <ZapIcon size={20} className={styles.zapIcon} />
+            </div>
+            <div className={styles.countdownTimer}>
+              <div className={styles.countdownUnit}>
+                <div className={styles.countdownNumber}>{String(timeLeft.hours).padStart(2, '0')}</div>
+                <div className={styles.countdownLabel}>Horas</div>
               </div>
-              <div className={styles.countdownTimer}>
-                <div className={styles.countdownUnit}>
-                  <div className={styles.countdownNumber}>{String(timeLeft.hours).padStart(2, '0')}</div>
-                  <div className={styles.countdownLabel}>Horas</div>
-                </div>
-                <div className={styles.countdownUnit}>
-                  <div className={styles.countdownNumber}>{String(timeLeft.minutes).padStart(2, '0')}</div>
-                  <div className={styles.countdownLabel}>Minutos</div>
-                </div>
-                <div className={styles.countdownUnit}>
-                  <div className={styles.countdownNumber}>{String(timeLeft.seconds).padStart(2, '0')}</div>
-                  <div className={styles.countdownLabel}>Segundos</div>
-                </div>
+              <div className={styles.countdownUnit}>
+                <div className={styles.countdownNumber}>{String(timeLeft.minutes).padStart(2, '0')}</div>
+                <div className={styles.countdownLabel}>Minutos</div>
               </div>
+              <div className={styles.countdownUnit}>
+                <div className={styles.countdownNumber}>{String(timeLeft.seconds).padStart(2, '0')}</div>
+                <div className={styles.countdownLabel}>Segundos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.plansGrid}>
+          {/* Plano Básico */}
+          <Card className={styles.planCard}>
+            <div className={styles.planHeader}>
+              <h3 className={styles.planName}>Plano Básico</h3>
             </div>
 
             <div className={styles.priceContainer}>
@@ -419,17 +445,65 @@ export default function LandingPage() {
             </div>
 
             <Button size="large" fullWidth onClick={handlePurchase}>
-              Ir para o Pagamento Seguro
+              Escolher Plano Básico
             </Button>
-
-            <div className={styles.guarantee}>
-              <strong><ShieldIcon size={20} className={styles.shieldIcon} /> Garantia Incondicional de 7 Dias</strong>
-              <p>
-                Se você não ficar 100% satisfeito, devolvemos seu dinheiro.
-                Sem perguntas, sem burocracia.
-              </p>
-            </div>
           </Card>
+
+          {/* Plano Plus */}
+          <Card className={`${styles.planCard} ${styles.planCardPlus}`}>
+            <div className={styles.planBadge}>
+              <StarIcon size={14} /> Mais Popular
+            </div>
+            <div className={styles.planHeader}>
+              <h3 className={styles.planNamePlus}>Plano Plus</h3>
+            </div>
+
+            <div className={styles.priceContainer}>
+              <div className={styles.priceOld}>12x de R$ 147,00</div>
+              <div className={styles.price}>
+                <span className={styles.priceText}>12x de</span>
+              </div>
+              <div className={styles.priceMain}>
+                <span className={styles.currency}>R$</span>
+                <span className={styles.amount}>49,90</span>
+              </div>
+              <div className={styles.installments}>sem juros</div>
+            </div>
+
+            <div className={styles.offerIncludes}>
+              <h3>Tudo do Básico, mais:</h3>
+              <ul>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> 12 Módulos completos de Pilates</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> 50+ videoaulas em HD</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Rotinas de 10 a 45 minutos</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Acesso vitalício</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Comunidade exclusiva</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Suporte da equipe</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Atualizações gratuitas</li>
+                <li><CheckIcon size={18} className={styles.checkIcon} /> Garantia de 7 dias</li>
+              </ul>
+              <div className={styles.plusExtras}>
+                <h3>Exclusivo Plus:</h3>
+                <ul>
+                  <li><VideoIcon size={18} className={styles.plusIcon} /> 1 aula online por mês com a Professora Gabi Xavier pelo Google Meet</li>
+                  <li><MessageIcon size={18} className={styles.plusIcon} /> Acesso ao WhatsApp da Gabi Xavier para dúvidas</li>
+                  <li><GiftIcon size={18} className={styles.plusIcon} /> Pacotes exclusivos de exercícios</li>
+                </ul>
+              </div>
+            </div>
+
+            <Button size="large" fullWidth onClick={handlePurchase}>
+              Escolher Plano Plus
+            </Button>
+          </Card>
+        </div>
+
+        <div className={styles.guarantee}>
+          <strong><ShieldIcon size={20} className={styles.shieldIcon} /> Garantia Incondicional de 7 Dias</strong>
+          <p>
+            Se você não ficar 100% satisfeito, devolvemos seu dinheiro.
+            Sem perguntas, sem burocracia.
+          </p>
         </div>
       </Section>
 

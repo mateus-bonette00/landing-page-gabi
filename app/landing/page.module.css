@@ -222,29 +222,34 @@
 /* Exercises Grid */
 .exercisesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-xl);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .exercisesGrid {
     grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
   }
 }
 
 .exerciseImage {
   margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
-.exercisePlaceholder {
+.exerciseImg {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: var(--gradient-hero);
+  height: 220px;
+  object-fit: cover;
   border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--font-size-6xl);
+  transition: transform 0.4s ease;
+}
+
+.exerciseImg:hover {
+  transform: scale(1.05);
 }
 
 .exercisesGrid h4 {
@@ -260,27 +265,118 @@
   margin: 0;
 }
 
-/* Offer Container */
-.offerContainer {
-  max-width: 700px;
-  margin: 0 auto;
+/* Plans Grid */
+.countdownWrapper {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-3xl);
 }
 
-.offerCard {
+.plansGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media (max-width: 868px) {
+  .plansGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+.planCard {
   text-align: center;
-  padding: var(--spacing-3xl);
+  padding: var(--spacing-2xl);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(51, 0, 102, 0.15);
+}
+
+.planCardPlus {
+  border: 2px solid var(--color-accent);
+  box-shadow: 0 8px 30px rgba(149, 100, 239, 0.2);
+}
+
+.planBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-hero);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-lg);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.planHeader {
+  margin-bottom: var(--spacing-lg);
+}
+
+.planName {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.planNamePlus {
+  font-size: var(--font-size-2xl);
+  color: var(--color-accent);
+  font-weight: 800;
 }
 
 @media (max-width: 768px) {
-  .offerCard {
+  .planCard {
     padding: var(--spacing-xl);
   }
 }
 
-.offerTitle {
-  font-size: var(--font-size-3xl);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-2xl);
+.plusExtras {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 2px dashed var(--color-accent);
+}
+
+.plusExtras h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+}
+
+.plusExtras ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plusExtras ul li {
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.plusIcon {
+  color: var(--color-accent);
+  flex-shrink: 0;
 }
 
 .priceContainer {
@@ -435,16 +531,21 @@
 }
 
 .guarantee {
-  margin-top: var(--spacing-2xl);
+  margin-top: var(--spacing-3xl);
   padding: var(--spacing-lg);
   background-color: var(--color-background);
   border-radius: var(--radius-md);
   border: 2px solid var(--color-accent);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .guarantee strong {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--spacing-sm);
   font-size: var(--font-size-lg);
   color: var(--color-primary);
