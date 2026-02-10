@@ -13,7 +13,7 @@ import FAQ from '@/components/FAQ';
 import { getQuizProfile } from '@/lib/storage';
 import { generatePersonalizedContent, QuizProfile } from '@/lib/profile';
 import { trackViewLanding, trackCTAClick, trackPurchaseClick } from '@/lib/tracking';
-import { CHECKOUT_URL } from '@/config/urls';
+import { CHECKOUT_BASICO_URL, CHECKOUT_PLUS_URL } from '@/config/urls';
 import { BookIcon, VideoIcon, ClockIcon, TrendingUpIcon, InfinityIcon, UsersIcon, ShieldIcon, CheckIcon, ZapIcon, StarIcon, MessageIcon, GiftIcon } from '@/components/Icons';
 import Image from 'next/image';
 
@@ -83,9 +83,14 @@ export default function LandingPage() {
     }
   };
 
-  const handlePurchase = () => {
+  const handlePurchaseBasico = () => {
     trackPurchaseClick(29.90);
-    window.open(CHECKOUT_URL, '_blank');
+    window.open(CHECKOUT_BASICO_URL, '_blank');
+  };
+
+  const handlePurchasePlus = () => {
+    trackPurchaseClick(49.90);
+    window.open(CHECKOUT_PLUS_URL, '_blank');
   };
 
   const handleQuizRedirect = () => {
@@ -443,7 +448,7 @@ export default function LandingPage() {
               </ul>
             </div>
 
-            <Button size="large" fullWidth onClick={handlePurchase}>
+            <Button size="large" fullWidth onClick={handlePurchaseBasico}>
               Escolher Plano Básico
             </Button>
           </Card>
@@ -491,7 +496,7 @@ export default function LandingPage() {
               </div>
             </div>
 
-            <Button size="large" fullWidth onClick={handlePurchase}>
+            <Button size="large" fullWidth onClick={handlePurchasePlus}>
               Escolher Plano Plus
             </Button>
           </Card>
