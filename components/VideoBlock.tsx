@@ -5,6 +5,7 @@ export interface VideoBlockProps {
   title: string;
   description: string;
   videoUrl?: string;
+  videoSrc?: string;
   thumbnailUrl?: string;
 }
 
@@ -12,12 +13,22 @@ export default function VideoBlock({
   title,
   description,
   videoUrl,
+  videoSrc,
   thumbnailUrl
 }: VideoBlockProps) {
   return (
     <div className={styles.videoBlock}>
       <div className={styles.videoContainer}>
-        {videoUrl ? (
+        {videoSrc ? (
+          <video
+            className={styles.video}
+            controls
+            preload="metadata"
+            playsInline
+          >
+            <source src={videoSrc} />
+          </video>
+        ) : videoUrl ? (
           <iframe
             className={styles.video}
             src={videoUrl}

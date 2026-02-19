@@ -242,7 +242,7 @@ export default function LandingPage() {
         <VideoBlock
           title="Conheça a Gabi Xavier"
           description="Fisioterapeuta e instrutora de Pilates com mais de 10 anos de experiência. Descubra como o método Pilates pode transformar sua saúde e bem-estar, com técnicas validadas e resultados comprovados."
-          thumbnailUrl=""
+          videoSrc="/VideoApresentacaoGabi.mov"
         />
       </Section>
 
