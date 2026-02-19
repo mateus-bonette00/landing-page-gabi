@@ -357,14 +357,14 @@ export default function LandingPage() {
             <div className={styles.exerciseImage}>
               <Image
                 src="/roll-up.jpeg"
-                alt="Exercício Roll Up - Flexibilidade da coluna"
+                alt="Exercício Teaser"
                 width={400}
                 height={300}
                 className={styles.exerciseImg}
               />
             </div>
-            <h4>Roll Up</h4>
-            <p>Fortalece abdômen e melhora flexibilidade da coluna</p>
+            <h4>Teaser</h4>
+            <p>Fortalece o abdômen, melhora o equilíbrio e a estabilidade.</p>
           </Card>
           <Card hover>
             <div className={styles.exerciseImage}>
