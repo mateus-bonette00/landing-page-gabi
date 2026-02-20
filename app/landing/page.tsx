@@ -84,12 +84,12 @@ export default function LandingPage() {
   };
 
   const handlePurchaseBasico = () => {
-    trackPurchaseClick(29.90);
+    trackPurchaseClick(358.80); // Preço à vista no Pix
     window.open(CHECKOUT_BASICO_URL, '_blank');
   };
 
   const handlePurchasePlus = () => {
-    trackPurchaseClick(49.90);
+    trackPurchaseClick(598.80); // Preço à vista no Pix
     window.open(CHECKOUT_PLUS_URL, '_blank');
   };
 
@@ -243,6 +243,7 @@ export default function LandingPage() {
           title="Conheça a Gabi Xavier"
           description="Fisioterapeuta e instrutora de Pilates com mais de 10 anos de experiência. Descubra como o método Pilates pode transformar sua saúde e bem-estar, com técnicas validadas e resultados comprovados."
           videoSrc="/VideoApresentacaoGabi.mov"
+          thumbnailUrl="/thumbnail.png"
         />
       </Section>
 
@@ -417,89 +418,84 @@ export default function LandingPage() {
 
         <div className={styles.plansGrid}>
           {/* Plano Básico */}
-          <Card className={styles.planCard}>
+          <div className={styles.planCard}>
             <div className={styles.planHeader}>
               <h3 className={styles.planName}>Plano Básico</h3>
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceOld}>12x de R$ 97,00</div>
-              <div className={styles.price}>
-                <span className={styles.priceText}>12x de</span>
-              </div>
-              <div className={styles.priceMain}>
-                <span className={styles.currency}>R$</span>
-                <span className={styles.amount}>29,90</span>
-              </div>
-              <div className={styles.installments}>sem juros</div>
+              <div className={styles.priceOld}>De R$ 1.435,20</div>
+              <div className={styles.priceBadge}>75% OFF no Pix</div>
+              <div className={styles.priceLabel}>Pix: R$ 358,80 à vista</div>
+              <div className={styles.priceSecondary}>ou 12x de R$ 37,11 no cartão</div>
+              <p className={styles.priceSavings}>Economize R$ 1.076,40</p>
+              <p className={styles.priceDisclaimer}>As parcelas exibidas no checkout podem variar conforme regras do cartão.</p>
             </div>
 
             <div className={styles.offerIncludes}>
               <h3>Inclui:</h3>
               <ul>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> 12 Módulos completos de Pilates</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> 50+ videoaulas em HD</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Rotinas de 10 a 45 minutos</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Acesso vitalício</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Comunidade exclusiva</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Suporte da equipe</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Atualizações gratuitas</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Garantia de 7 dias</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> 12 Módulos completos de Pilates</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> 50+ videoaulas em HD</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Rotinas de 10 a 45 minutos</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Acesso vitalício</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Comunidade exclusiva</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Suporte da equipe</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Atualizações gratuitas</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Garantia de 7 dias</li>
               </ul>
             </div>
 
-            <Button size="large" fullWidth onClick={handlePurchaseBasico}>
+            <button className={styles.planCta} onClick={handlePurchaseBasico}>
               Escolher Plano Básico
-            </Button>
-          </Card>
+            </button>
+          </div>
 
           {/* Plano Plus */}
-          <Card className={`${styles.planCard} ${styles.planCardPlus}`}>
+          <div className={`${styles.planCard} ${styles.planCardPlus}`}>
             <div className={styles.planBadge}>
-              <StarIcon size={14} /> Mais Popular
+              <StarIcon size={12} /> MAIS POPULAR
             </div>
             <div className={styles.planHeader}>
               <h3 className={styles.planNamePlus}>Plano Plus</h3>
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceOld}>12x de R$ 147,00</div>
-              <div className={styles.price}>
-                <span className={styles.priceText}>12x de</span>
-              </div>
-              <div className={styles.priceMain}>
-                <span className={styles.currency}>R$</span>
-                <span className={styles.amount}>49,90</span>
-              </div>
-              <div className={styles.installments}>sem juros</div>
+              <div className={styles.priceOld}>De R$ 2.395,20</div>
+              <div className={styles.priceBadge}>75% OFF no Pix</div>
+              <div className={styles.priceLabel}>Pix: R$ 598,80 à vista</div>
+              <div className={styles.priceSecondary}>ou 12x de R$ 61,93 no cartão</div>
+              <p className={styles.priceSavings}>Economize R$ 1.796,40</p>
+              <p className={styles.priceDisclaimer}>As parcelas exibidas no checkout podem variar conforme regras do cartão.</p>
             </div>
 
             <div className={styles.offerIncludes}>
               <h3>Tudo do Básico, mais:</h3>
               <ul>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> 12 Módulos completos de Pilates</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> 50+ videoaulas em HD</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Rotinas de 10 a 45 minutos</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Acesso vitalício</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Comunidade exclusiva</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Suporte da equipe</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Atualizações gratuitas</li>
-                <li><CheckIcon size={18} className={styles.checkIcon} /> Garantia de 7 dias</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> 12 Módulos completos de Pilates</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> 50+ videoaulas em HD</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Rotinas de 10 a 45 minutos</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Acesso vitalício</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Comunidade exclusiva</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Suporte da equipe</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Atualizações gratuitas</li>
+                <li><CheckIcon size={16} className={styles.checkIcon} /> Garantia de 7 dias</li>
               </ul>
               <div className={styles.plusExtras}>
                 <h3>Exclusivo Plus:</h3>
                 <ul>
-                  <li><VideoIcon size={18} className={styles.plusIcon} /> 1 aula online por mês com a Professora Gabi Xavier pelo Google Meet</li>
-                  <li><MessageIcon size={18} className={styles.plusIcon} /> Acesso ao WhatsApp da Gabi Xavier para dúvidas</li>
-                  <li><GiftIcon size={18} className={styles.plusIcon} /> Pacotes exclusivos de exercícios</li>
+                  <li><VideoIcon size={16} className={styles.plusIcon} /> 1 aula online por mês com a Professora Gabi Xavier pelo Google Meet</li>
+                  <li><MessageIcon size={16} className={styles.plusIcon} /> Acesso ao WhatsApp da Gabi Xavier para dúvidas</li>
+                  <li><GiftIcon size={16} className={styles.plusIcon} /> Pacotes exclusivos de exercícios</li>
+                  <li><StarIcon size={16} className={styles.plusIcon} /> Acesso aos melhores amigos (close friends do Instagram), com dicas e sugestões</li>
                 </ul>
               </div>
             </div>
 
-            <Button size="large" fullWidth onClick={handlePurchasePlus}>
+            <button className={styles.planCta} onClick={handlePurchasePlus}>
               Escolher Plano Plus
-            </Button>
-          </Card>
+            </button>
+          </div>
         </div>
 
         <div className={styles.guarantee}>

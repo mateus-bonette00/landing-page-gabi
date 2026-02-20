@@ -287,75 +287,195 @@
   }
 }
 
+/* ── Card base ── */
 .planCard {
   text-align: center;
-  padding: var(--spacing-2xl);
+  padding: var(--spacing-2xl) var(--spacing-xl);
   position: relative;
+  background: var(--color-base);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .planCard:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(51, 0, 102, 0.15);
+  box-shadow: 0 12px 40px rgba(51, 0, 102, 0.18);
 }
 
+/* ── Card Plus (elevated) ── */
 .planCardPlus {
   border: 2px solid var(--color-accent);
-  box-shadow: 0 8px 30px rgba(149, 100, 239, 0.2);
+  box-shadow: 0 8px 30px rgba(149, 100, 239, 0.22);
+  padding-top: calc(var(--spacing-2xl) + 10px);
 }
 
+.planCardPlus:hover {
+  box-shadow: 0 14px 44px rgba(149, 100, 239, 0.28);
+}
+
+/* ── Badge "Mais Popular" ── */
 .planBadge {
   position: absolute;
-  top: -14px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--gradient-hero);
   color: white;
-  padding: var(--spacing-xs) var(--spacing-lg);
+  padding: 6px var(--spacing-lg);
   border-radius: var(--radius-full);
-  font-size: var(--font-size-sm);
-  font-weight: 700;
+  font-size: var(--font-size-xs);
+  font-weight: 800;
   display: flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: 6px;
   white-space: nowrap;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 
+/* ── Plan name ── */
 .planHeader {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .planName {
   font-size: var(--font-size-2xl);
   color: var(--color-primary);
   font-weight: 800;
+  margin-bottom: 0;
 }
 
 .planNamePlus {
   font-size: var(--font-size-2xl);
   color: var(--color-accent);
   font-weight: 800;
+  margin-bottom: 0;
+}
+
+/* ── Price container ── */
+.priceContainer {
+  margin-bottom: var(--spacing-xl);
+}
+
+.priceOld {
+  font-size: var(--font-size-base);
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  font-family: var(--font-body);
+}
+
+.priceBadge {
+  display: inline-block;
+  background: var(--gradient-hero);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priceLabel {
+  font-size: var(--font-size-2xl);
+  color: #27ae60;
+  font-weight: 800;
+  margin-bottom: 4px;
+  font-family: var(--font-body);
+}
+
+.priceSecondary {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+  opacity: 0.8;
+}
+
+.priceSavings {
+  font-size: var(--font-size-sm);
+  color: #27ae60;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  font-style: italic;
+}
+
+.priceDisclaimer {
+  font-size: 0.65rem;
+  color: var(--color-text);
+  opacity: 0.5;
+  line-height: 1.3;
+  max-width: 280px;
+  margin: 0 auto;
+  margin-top: var(--spacing-xs);
 }
 
 @media (max-width: 768px) {
   .planCard {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .amount {
+    font-size: var(--font-size-5xl);
   }
 }
 
+/* ── Includes box ── */
+.offerIncludes {
+  background-color: var(--color-background);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.offerIncludes h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.offerIncludes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offerIncludes ul li {
+  padding: 5px 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.checkIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Plus extras ── */
 .plusExtras {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-lg);
-  border-top: 2px dashed var(--color-accent);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 2px dashed var(--color-soft);
 }
 
 .plusExtras h3 {
-  font-size: var(--font-size-lg);
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-md);
-  font-weight: 700;
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 800;
+  font-style: italic;
 }
 
 .plusExtras ul {
@@ -365,82 +485,54 @@
 }
 
 .plusExtras ul li {
-  padding: var(--spacing-sm) 0;
-  font-size: var(--font-size-base);
+  padding: 5px 0;
+  font-size: var(--font-size-sm);
   color: var(--color-text);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--spacing-sm);
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .plusIcon {
   color: var(--color-accent);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.priceContainer {
-  margin-bottom: var(--spacing-3xl);
-}
-
-.priceOld {
-  font-size: var(--font-size-3xl);
-  color: #e74c3c;
-  text-decoration: line-through;
-  margin-bottom: var(--spacing-lg);
+/* ── CTA Button ── */
+.planCta {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--font-size-lg);
   font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--transition-base), transform var(--transition-fast), box-shadow var(--transition-base);
 }
 
-.price {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--spacing-xs);
+.planCta:hover {
+  background: var(--color-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(42, 1, 88, 0.3);
+  color: white;
 }
 
-.priceText {
-  font-size: var(--font-size-2xl);
-  color: #27ae60;
-  font-weight: 600;
+.planCta:active {
+  transform: translateY(0);
 }
 
-.priceMain {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  margin-bottom: var(--spacing-sm);
-}
-
-.currency {
-  font-size: var(--font-size-4xl);
-  color: #27ae60;
-  font-weight: 700;
-  margin-top: var(--spacing-md);
-}
-
-.amount {
-  font-size: 5rem;
-  color: #27ae60;
-  font-weight: 900;
-  line-height: 1;
-}
-
-@media (max-width: 768px) {
-  .amount {
-    font-size: var(--font-size-5xl);
-  }
-}
-
-.installments {
-  font-size: var(--font-size-xl);
-  color: #27ae60;
-  font-weight: 600;
-  margin-bottom: var(--spacing-md);
-}
-
+/* ── Countdown ── */
 .countdown {
-  background: linear-gradient(135deg, #3306 0%, #3306 100%);
+  background: linear-gradient(135deg, #2A0158 0%, #330066 100%);
   color: white;
   padding: var(--spacing-lg);
   border-radius: var(--radius-md);
@@ -495,41 +587,7 @@
   opacity: 0.9;
 }
 
-.offerIncludes {
-  background-color: var(--color-background);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-2xl);
-  text-align: left;
-}
-
-.offerIncludes h3 {
-  font-size: var(--font-size-xl);
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-md);
-}
-
-.offerIncludes ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.offerIncludes ul li {
-  padding: var(--spacing-sm) 0;
-  font-size: var(--font-size-base);
-  color: var(--color-text);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-}
-
-.checkIcon {
-  color: var(--color-primary);
-  flex-shrink: 0;
-}
-
+/* ── Guarantee ── */
 .guarantee {
   margin-top: var(--spacing-3xl);
   padding: var(--spacing-lg);

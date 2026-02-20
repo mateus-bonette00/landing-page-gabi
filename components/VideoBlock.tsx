@@ -25,6 +25,7 @@ export default function VideoBlock({
             controls
             preload="metadata"
             playsInline
+            poster={thumbnailUrl}
           >
             <source src={videoSrc} />
           </video>
