@@ -425,9 +425,10 @@ export default function LandingPage() {
 
             <div className={styles.priceContainer}>
               <div className={styles.priceOld}>De R$ 1.435,20</div>
-              <div className={styles.priceBadge}>75% OFF no Pix</div>
-              <div className={styles.priceLabel}>Pix: R$ 358,80 à vista</div>
-              <div className={styles.priceSecondary}>ou 12x de R$ 37,11 no cartão</div>
+              <div className={styles.priceBadge}>75% OFF</div>
+              <div className={styles.priceInstallment}>12x de R$ 37,11</div>
+              <div className={styles.priceInstallmentSub}>no cartão</div>
+              <div className={styles.priceCash}>ou R$ 358,80 à vista no Pix</div>
               <p className={styles.priceSavings}>Economize R$ 1.076,40</p>
               <p className={styles.priceDisclaimer}>As parcelas exibidas no checkout podem variar conforme regras do cartão.</p>
             </div>
@@ -462,9 +463,10 @@ export default function LandingPage() {
 
             <div className={styles.priceContainer}>
               <div className={styles.priceOld}>De R$ 2.395,20</div>
-              <div className={styles.priceBadge}>75% OFF no Pix</div>
-              <div className={styles.priceLabel}>Pix: R$ 598,80 à vista</div>
-              <div className={styles.priceSecondary}>ou 12x de R$ 61,93 no cartão</div>
+              <div className={styles.priceBadge}>75% OFF</div>
+              <div className={styles.priceInstallment}>12x de R$ 61,93</div>
+              <div className={styles.priceInstallmentSub}>no cartão</div>
+              <div className={styles.priceCash}>ou R$ 598,80 à vista no Pix</div>
               <p className={styles.priceSavings}>Economize R$ 1.796,40</p>
               <p className={styles.priceDisclaimer}>As parcelas exibidas no checkout podem variar conforme regras do cartão.</p>
             </div>
