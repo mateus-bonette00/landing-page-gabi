@@ -107,6 +107,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
@@ -115,6 +120,16 @@ body {
   background-color: var(--color-base);
   max-width: 100vw;
   overflow-x: hidden;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 /* Headings */
