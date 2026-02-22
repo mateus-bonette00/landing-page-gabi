@@ -212,14 +212,6 @@ export default function QuizPage() {
               <Button size="large" fullWidth onClick={() => setHasStarted(true)}>
                 Começar Agora
               </Button>
-              <Button
-                size="large"
-                fullWidth
-                variant="secondary"
-                onClick={() => router.push('/landing')}
-              >
-                Pular Quiz
-              </Button>
             </div>
           </Card>
         </Container>
