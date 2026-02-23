@@ -15,6 +15,7 @@ import { generatePersonalizedContent, QuizProfile } from '@/lib/profile';
 import { trackViewLanding, trackCTAClick, trackPurchaseClick } from '@/lib/tracking';
 import { CHECKOUT_BASICO_URL, CHECKOUT_PLUS_URL } from '@/config/urls';
 import { BookIcon, VideoIcon, ClockIcon, TrendingUpIcon, InfinityIcon, UsersIcon, ShieldIcon, CheckIcon, ZapIcon, StarIcon, MessageIcon, GiftIcon } from '@/components/Icons';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 import Image from 'next/image';
 
 export default function LandingPage() {
@@ -514,6 +515,8 @@ export default function LandingPage() {
         <h2 className={styles.sectionTitle}>Perguntas Frequentes</h2>
         <FAQ items={faqItems} />
       </Section>
+
+      <WhatsAppFloat />
 
       {/* Footer */}
       <footer className={styles.footer}>
