@@ -4,7 +4,7 @@
  */
 
 /* Importar fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Magnolia Script';
@@ -19,19 +19,43 @@
    ======================================== */
 
 :root {
-  /* Cores da paleta */
-  --color-primary: #330066;
-  --color-deep: #2A0158;
-  --color-accent: #9564EF;
-  --color-cta: #7750BF;
-  --color-soft: #B9A0DC;
-  --color-background: #EEE7F6;
+  /* ─── Paleta Bege-Ameixa ─── */
+  --lav-100: #f5ebe0;
+  --lav-200: #e8d5c4;
+  --lav-300: #d4b8a0;
+  --lav-400: #c9a08a;
+  --lav-500: #8b6574;
+  --lav-600: #6b4a5e;
+  --lav-700: #5b3a56;
+  --lav-800: #3d2240;
+
+  /* ─── Semânticas ─── */
+  --bg-start: #e8d5c4;
+  --bg-mid: #edddd0;
+  --bg-end: #f5ebe0;
+
+  --glass-bg: rgba(91, 58, 86, 0.08);
+  --glass-brd: rgba(91, 58, 86, 0.15);
+  --glass-hover: rgba(91, 58, 86, 0.12);
+
+  --text: rgba(61, 34, 64, 0.9);
+  --text-soft: rgba(61, 34, 64, 0.55);
+  --text-title: #3d2240;
+  --white: #ffffff;
+
+  /* Cores da paleta (mapeadas) */
+  --color-primary: #5b3a56;
+  --color-deep: #3d2240;
+  --color-accent: #8b6574;
+  --color-cta: #6b4a5e;
+  --color-soft: #d4b8a0;
+  --color-background: #f5ebe0;
   --color-base: #FFFFFF;
-  --color-text: #1E1E24;
-  --color-border: #E6E0F0;
+  --color-text: rgba(61, 34, 64, 0.9);
+  --color-border: rgba(91, 58, 86, 0.12);
 
   /* Gradiente hero */
-  --gradient-hero: linear-gradient(135deg, #2A0158 0%, #330066 45%, #9564EF 100%);
+  --gradient-hero: linear-gradient(135deg, #3d2240 0%, #5b3a56 45%, #8b6574 100%);
 
   /* Tipografia */
   --font-heading: 'Playfair Display', serif;
@@ -116,8 +140,8 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-base);
+  color: var(--text);
+  background-color: var(--bg-end);
   max-width: 100vw;
   overflow-x: hidden;
   min-height: 100dvh;

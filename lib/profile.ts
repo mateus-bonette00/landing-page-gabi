@@ -134,18 +134,46 @@ export function generatePersonalizedContent(profile: QuizProfile): PersonalizedC
 /**
  * Valida se o perfil está completo
  */
-export function isValidProfile(profile: any): profile is QuizProfile {
+export function isValidProfile(profile: unknown): profile is QuizProfile {
+  const validGoals: QuizGoal[] = [
+    'postura',
+    'dores',
+    'core',
+    'flexibilidade',
+    'mobilidade',
+    'retomar',
+    'definir'
+  ];
+
+  const validLevels: QuizLevel[] = ['iniciante', 'intermediario', 'avancado'];
+  const validPreferences: QuizPreference[] = ['com-equipamentos', 'sem-equipamentos'];
+  const validLocations: QuizLocation[] = ['casa', 'academia'];
+  const validSex: QuizSex[] = ['masculino', 'feminino', 'prefiro-nao-dizer'];
+
+  if (!profile || typeof profile !== 'object') {
+    return false;
+  }
+
+  const candidate = profile as Partial<QuizProfile>;
+
   return (
-    profile &&
-    typeof profile.peso === 'number' &&
-    typeof profile.altura === 'number' &&
-    typeof profile.idade === 'number' &&
-    typeof profile.sexo === 'string' &&
-    typeof profile.objetivo === 'string' &&
-    typeof profile.nivel === 'string' &&
-    typeof profile.rotina === 'number' &&
-    typeof profile.preferencia === 'string' &&
-    typeof profile.local === 'string' &&
-    typeof profile.dificuldades === 'object'
+    typeof candidate.peso === 'number' &&
+    typeof candidate.altura === 'number' &&
+    typeof candidate.idade === 'number' &&
+    typeof candidate.sexo === 'string' &&
+    validSex.includes(candidate.sexo as QuizSex) &&
+    Array.isArray(candidate.objetivo) &&
+    candidate.objetivo.length > 0 &&
+    candidate.objetivo.every((goal) => validGoals.includes(goal)) &&
+    typeof candidate.nivel === 'string' &&
+    validLevels.includes(candidate.nivel as QuizLevel) &&
+    typeof candidate.rotina === 'number' &&
+    typeof candidate.preferencia === 'string' &&
+    validPreferences.includes(candidate.preferencia as QuizPreference) &&
+    typeof candidate.local === 'string' &&
+    validLocations.includes(candidate.local as QuizLocation) &&
+    typeof candidate.dificuldades === 'object' &&
+    candidate.dificuldades !== null &&
+    typeof candidate.timestamp === 'number'
   );
 }

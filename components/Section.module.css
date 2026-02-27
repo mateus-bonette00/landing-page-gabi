@@ -11,9 +11,9 @@
 }
 
 .white {
-  background-color: var(--color-base);
+  background-color: var(--bg-mid);
 }
 
 .light {
-  background-color: var(--color-background);
+  background-color: var(--bg-end);
 }

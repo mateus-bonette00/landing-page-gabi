@@ -2,6 +2,7 @@
  * Funções de tracking de eventos (simuladas)
  * Em produção, integrar com Google Analytics, Meta Pixel, etc.
  */
+import { QuizProfile } from './profile';
 
 type TrackingEvent =
   | 'quiz_start'
@@ -11,7 +12,7 @@ type TrackingEvent =
   | 'purchase_click';
 
 interface TrackingData {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
@@ -52,7 +53,9 @@ export function trackQuizStart(): void {
 /**
  * Dispara evento de conclusão do quiz
  */
-export function trackQuizComplete(profile: any): void {
+export function trackQuizComplete(
+  profile: Pick<QuizProfile, 'objetivo' | 'nivel' | 'rotina'>
+): void {
   track('quiz_complete', {
     timestamp: Date.now(),
     objetivo: profile.objetivo,

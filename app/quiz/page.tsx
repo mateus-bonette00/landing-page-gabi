@@ -27,6 +27,7 @@ type QuizStep =
   | 'resultado';
 
 const TOTAL_STEPS = 11;
+const QUIZ_MODAL_SESSION_KEY = 'gx_show_quiz_modal';
 
 const stepOrder: QuizStep[] = [
   'peso',
@@ -190,6 +191,13 @@ export default function QuizPage() {
 
     saveQuizProfile(profile);
     trackQuizComplete(profile);
+
+    try {
+      window.sessionStorage.setItem(QUIZ_MODAL_SESSION_KEY, '1');
+    } catch (error) {
+      console.warn('Não foi possível salvar o estado do modal:', error);
+    }
+
     router.push('/landing');
   };
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/Header";
 
 export const metadata: Metadata = {
   title: "Desafio Pilates 8 GX: Transformação em Casa | Gabi Xavier",
-  description: "Desafio Pilates 8 GX: Transformação em Casa. Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
+  description:
+    "Desafio Pilates 8 GX: Transformação em Casa. Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Desafio Pilates 8 GX: Transformação em Casa | Gabi Xavier",
-    description: "Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
+    description:
+      "Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
     images: [
       {
         url: "/og-image.png",
@@ -30,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Desafio Pilates 8 GX: Transformação em Casa | Gabi Xavier",
-    description: "Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
+    description:
+      "Transforme seu corpo e sua saúde com o método Pilates da Gabi Xavier. Curso online completo com acompanhamento profissional.",
     images: ["/og-image.png"],
   },
 };
@@ -43,7 +45,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Header />
         <main>{children}</main>
       </body>
     </html>
