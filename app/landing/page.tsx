@@ -192,7 +192,8 @@ export default function LandingPage() {
     window.open(CHECKOUT_PLUS_URL, "_blank");
   };
 
-  const handleQuizRedirect = () => {
+  const handleQuizRedirect = (origin = "hero") => {
+    trackCTAClick("Ir para quiz", origin);
     router.push("/quiz");
   };
 
@@ -235,6 +236,11 @@ export default function LandingPage() {
     highlightedDifficulties.length > 0
       ? highlightedDifficulties.join(" e ").toLowerCase()
       : "seus principais desafios";
+
+  const quizHeaderMessage = profile
+    ? "Seu resultado já está salvo. Quer atualizar seu plano ideal?"
+    : "Descubra em 1 minuto o Pilates ideal para sua rotina.";
+  const quizHeaderButtonLabel = profile ? "Refazer quiz" : "Fazer quiz gratuito";
 
   // Dados dos depoimentos
   const testimonials = [
@@ -450,6 +456,20 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <Container>
+          <header className={styles.heroHeader}>
+            <div className={styles.heroHeaderTextBlock}>
+              <span className={styles.heroHeaderEyebrow}>Quiz de Perfil</span>
+              <p className={styles.heroHeaderText}>{quizHeaderMessage}</p>
+            </div>
+            <Button
+              size="small"
+              className={styles.heroHeaderButton}
+              onClick={() => handleQuizRedirect("hero_header")}
+            >
+              {quizHeaderButtonLabel}
+            </Button>
+          </header>
+
           <div className={styles.heroSplit}>
             <div className={styles.heroLeft}>
               <div className={styles.heroBadge}>
@@ -479,7 +499,7 @@ export default function LandingPage() {
                   Quer um plano personalizado?{" "}
                   <button
                     className={styles.quizLink}
-                    onClick={handleQuizRedirect}
+                    onClick={() => handleQuizRedirect("hero_prompt")}
                   >
                     Faça nosso quiz rápido
                   </button>
