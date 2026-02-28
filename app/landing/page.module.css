@@ -658,6 +658,140 @@
 }
 
 /* ═══════════════════════════════════════
+   MODULES GRID — O QUE CADA MÓDULO TRAZ
+   ═══════════════════════════════════════ */
+.modulesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+@media (max-width: 868px) {
+  .modulesGrid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
+.moduleCard {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-brd);
+  border-radius: var(--r-lg, var(--radius-xl));
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  box-shadow: 0 8px 32px rgba(61, 34, 64, 0.08);
+  transition:
+    transform 0.35s var(--ease, ease),
+    box-shadow 0.35s var(--ease, ease);
+}
+
+.moduleCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(61, 34, 64, 0.14);
+}
+
+.moduleCardBonus {
+  border: 2px solid var(--lav-500);
+  box-shadow: 0 8px 30px rgba(139, 101, 116, 0.18);
+  padding-top: calc(var(--spacing-2xl) + 14px);
+}
+
+.moduleCardBonus:hover {
+  box-shadow: 0 16px 48px rgba(139, 101, 116, 0.22);
+}
+
+.moduleBonusBadge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-hero);
+  color: white;
+  padding: 6px var(--spacing-lg);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.moduleNumber {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.6;
+}
+
+.moduleTitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--lav-800);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.moduleDescription {
+  font-size: var(--font-size-base);
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.moduleObjectives {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(91, 58, 86, 0.08);
+  border-radius: var(--r-md, var(--radius-md));
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.moduleObjectives h4 {
+  font-size: var(--font-size-sm);
+  color: var(--lav-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.moduleObjectives ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.moduleObjectives ul li {
+  padding: 4px 0;
+  padding-left: var(--spacing-lg);
+  position: relative;
+  font-size: var(--font-size-sm);
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.moduleObjectives ul li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--lav-500);
+  font-weight: bold;
+}
+
+/* ═══════════════════════════════════════
    TWO COLUMNS LAYOUT
    ═══════════════════════════════════════ */
 .twoColumns {

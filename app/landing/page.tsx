@@ -639,34 +639,92 @@ export default function LandingPage() {
         </div>
       </Section>
 
-      {/* Benefícios */}
+      {/* O Que Cada Módulo Traz */}
       <Section background="white">
-        <h2 className={styles.sectionTitle}>Benefícios do Pilates</h2>
-        <div className={styles.twoColumns}>
-          <div>
-            <h3 className={styles.columnTitle}>Benefícios Físicos</h3>
-            <ul className={styles.benefitsList}>
-              <li>Fortalecimento muscular profundo</li>
-              <li>Melhora da postura e alinhamento</li>
-              <li>Aumento da flexibilidade</li>
-              <li>Redução de dores crônicas</li>
-              <li>Maior mobilidade articular</li>
-              <li>Definição muscular</li>
-            </ul>
+        <h2 className={styles.sectionTitle}>O Que Cada Módulo Traz</h2>
+        <div className={styles.modulesGrid}>
+          {/* Módulo 1 */}
+          <div className={styles.moduleCard}>
+            <div className={styles.moduleNumber}>01</div>
+            <h3 className={styles.moduleTitle}>Fortalecimento do Corpo Todo</h3>
+            <p className={styles.moduleDescription}>
+              Videoaulas completas focadas no fortalecimento integral do seu
+              corpo, trabalhando todos os grupos musculares.
+            </p>
+            <div className={styles.moduleObjectives}>
+              <h4>Objetivos:</h4>
+              <ul>
+                <li>Fortalecer a musculatura de forma global</li>
+                <li>Melhorar a resistência e o condicionamento físico</li>
+                <li>Aumentar a estabilidade e o equilíbrio corporal</li>
+                <li>Desenvolver consciência corporal completa</li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3 className={styles.columnTitle}>Benefícios Práticos</h3>
-            <ul className={styles.benefitsList}>
-              <li>Exercícios de baixo impacto</li>
-              <li>Seguro para todas as idades</li>
-              <li>Previne lesões</li>
-              <li>Melhora qualidade de vida</li>
-              <li>Aumenta consciência corporal</li>
-              <li>Reduz estresse e ansiedade</li>
-            </ul>
+
+          {/* Módulo 2 */}
+          <div className={styles.moduleCard}>
+            <div className={styles.moduleNumber}>02</div>
+            <h3 className={styles.moduleTitle}>Braços e Pernas</h3>
+            <p className={styles.moduleDescription}>
+              Videoaulas direcionadas para o fortalecimento e definição de
+              membros superiores e inferiores.
+            </p>
+            <div className={styles.moduleObjectives}>
+              <h4>Objetivos:</h4>
+              <ul>
+                <li>Tonificar e definir braços, ombros e costas</li>
+                <li>Fortalecer pernas, glúteos e panturrilhas</li>
+                <li>Melhorar a firmeza e a sustentação muscular</li>
+                <li>Ganhar força funcional para o dia a dia</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Módulo 3 */}
+          <div className={styles.moduleCard}>
+            <div className={styles.moduleNumber}>03</div>
+            <h3 className={styles.moduleTitle}>Pilates Funcional</h3>
+            <p className={styles.moduleDescription}>
+              Exercícios que combinam o Pilates clássico com movimentos
+              funcionais para resultados ainda mais completos.
+            </p>
+            <div className={styles.moduleObjectives}>
+              <h4>Objetivos:</h4>
+              <ul>
+                <li>Integrar força, mobilidade e coordenação</li>
+                <li>Melhorar a postura e o alinhamento corporal</li>
+                <li>Aumentar a flexibilidade e a amplitude de movimento</li>
+                <li>Prevenir lesões e reduzir dores crônicas</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Módulo 4 - Bônus */}
+          <div className={`${styles.moduleCard} ${styles.moduleCardBonus}`}>
+            <div className={styles.moduleBonusBadge}>
+              <StarIcon size={12} /> BÔNUS — EXCLUSIVO PLANO PLUS
+            </div>
+            <div className={styles.moduleNumber}>04</div>
+            <h3 className={styles.moduleTitle}>Exercícios de Abdômen</h3>
+            <p className={styles.moduleDescription}>
+              Módulo especial focado no fortalecimento e definição do core e
+              abdômen, disponível apenas no pacote Plus.
+            </p>
+            <div className={styles.moduleObjectives}>
+              <h4>Objetivos:</h4>
+              <ul>
+                <li>Fortalecer profundamente o core e o abdômen</li>
+                <li>Definir e tonificar a região abdominal</li>
+                <li>Melhorar a sustentação da coluna e postura</li>
+                <li>Reduzir dores lombares com musculatura fortalecida</li>
+              </ul>
+            </div>
           </div>
         </div>
       </Section>
+
+     
 
       {/* Demonstração de Exercícios */}
       <Section background="light">
