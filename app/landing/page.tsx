@@ -206,10 +206,10 @@ export default function LandingPage() {
   };
 
   const handleWelcomeModalCTA = () => {
-    trackCTAClick("Ver oferta", "modal_boas_vindas");
+    trackCTAClick("Saber mais do desafio", "modal_boas_vindas");
     setIsWelcomeModalOpen(false);
     window.setTimeout(() => {
-      scrollToOfferSection();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 180);
   };
 
@@ -415,7 +415,7 @@ export default function LandingPage() {
 
             <div className={styles.welcomeModalActions}>
               <Button size="large" onClick={handleWelcomeModalCTA}>
-                Quero ver meu plano ideal
+                Quero Saber Mais do Desafio 8GX
               </Button>
               <button
                 type="button"
@@ -529,7 +529,8 @@ export default function LandingPage() {
             <div className={styles.videoCentered}>
               <video
                 controls
-                preload="metadata"
+                autoPlay
+                muted
                 playsInline
                 poster="/thumbnail.png"
               >
@@ -843,7 +844,7 @@ export default function LandingPage() {
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceInstallment}>3x de R$ 47,90</div>
+              <div className={styles.priceInstallment}>3x de R$ 48,89</div>
               <div className={styles.priceInstallmentSub}>ou</div>
               <div className={styles.priceCash}>• R$ 137 à vista</div>
             </div>
@@ -901,7 +902,7 @@ export default function LandingPage() {
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceInstallment}>3x de R$ 97</div>
+              <div className={styles.priceInstallment}>3x de R$ 105,99</div>
               <div className={styles.priceInstallmentSub}>ou</div>
               <div className={styles.priceCash}>• R$ 297 à vista</div>
             </div>
