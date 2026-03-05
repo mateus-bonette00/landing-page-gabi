@@ -686,25 +686,6 @@ export default function LandingPage() {
           {/* Módulo 2 */}
           <div className={styles.moduleCard}>
             <div className={styles.moduleNumber}>02</div>
-            <h3 className={styles.moduleTitle}>Braços e Pernas</h3>
-            <p className={styles.moduleDescription}>
-              Videoaulas direcionadas para o fortalecimento e definição de
-              membros superiores e inferiores.
-            </p>
-            <div className={styles.moduleObjectives}>
-              <h4>Objetivos:</h4>
-              <ul>
-                <li>Tonificar e definir braços, ombros e costas</li>
-                <li>Fortalecer pernas, glúteos e panturrilhas</li>
-                <li>Melhorar a firmeza e a sustentação muscular</li>
-                <li>Ganhar força funcional para o dia a dia</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Módulo 3 */}
-          <div className={styles.moduleCard}>
-            <div className={styles.moduleNumber}>03</div>
             <h3 className={styles.moduleTitle}>Pilates Funcional</h3>
             <p className={styles.moduleDescription}>
               Exercícios que combinam o Pilates clássico com movimentos
@@ -717,6 +698,25 @@ export default function LandingPage() {
                 <li>Melhorar a postura e o alinhamento corporal</li>
                 <li>Aumentar a flexibilidade e a amplitude de movimento</li>
                 <li>Prevenir lesões e reduzir dores crônicas</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Módulo 3 */}
+          <div className={styles.moduleCard}>
+            <div className={styles.moduleNumber}>03</div>
+            <h3 className={styles.moduleTitle}>Braços e Pernas</h3>
+            <p className={styles.moduleDescription}>
+              Videoaulas direcionadas para o fortalecimento e definição de
+              membros superiores e inferiores.
+            </p>
+            <div className={styles.moduleObjectives}>
+              <h4>Objetivos:</h4>
+              <ul>
+                <li>Tonificar e definir braços, ombros e costas</li>
+                <li>Fortalecer pernas, glúteos e panturrilhas</li>
+                <li>Melhorar a firmeza e a sustentação muscular</li>
+                <li>Ganhar força funcional para o dia a dia</li>
               </ul>
             </div>
           </div>
