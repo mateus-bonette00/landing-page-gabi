@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FacebookPixel from "@/components/FacebookPixel";
 
 export const metadata: Metadata = {
   title: "Desafio Pilates 8 GX: Transformação em Casa | Gabi Xavier",
@@ -45,6 +46,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
+        <FacebookPixel />
         <main>{children}</main>
       </body>
     </html>
