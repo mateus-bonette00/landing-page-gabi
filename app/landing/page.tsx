@@ -240,7 +240,9 @@ export default function LandingPage() {
   const quizHeaderMessage = profile
     ? "Seu resultado já está salvo. Quer atualizar seu plano ideal?"
     : "Descubra em 1 minuto o Pilates ideal para sua rotina.";
-  const quizHeaderButtonLabel = profile ? "Refazer quiz" : "Fazer quiz gratuito";
+  const quizHeaderButtonLabel = profile
+    ? "Refazer quiz"
+    : "Fazer quiz gratuito";
 
   // Dados dos depoimentos
   const testimonials = [
@@ -745,8 +747,6 @@ export default function LandingPage() {
         </div>
       </Section>
 
-     
-
       {/* Demonstração de Exercícios */}
       <Section background="light">
         <h2 className={styles.sectionTitle}>Prévia dos Exercícios</h2>
@@ -844,17 +844,17 @@ export default function LandingPage() {
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceInstallment}>3x de R$ 48,89</div>
+              <div className={styles.priceInstallment}>3x de R$ 23,91</div>
               <div className={styles.priceInstallmentSub}>ou</div>
-              <div className={styles.priceCash}>• R$ 137 à vista</div>
+              <div className={styles.priceCash}>• R$ 67 à vista</div>
             </div>
 
             <div className={styles.offerIncludes}>
               <h3>Inclui:</h3>
               <ul>
                 <li>
-                  <CheckIcon size={16} className={styles.checkIcon} /> 3
-                  Módulos completos de Pilates
+                  <CheckIcon size={16} className={styles.checkIcon} /> 3 Módulos
+                  completos de Pilates
                 </li>
                 <li>
                   <CheckIcon size={16} className={styles.checkIcon} /> 12+
@@ -902,29 +902,27 @@ export default function LandingPage() {
             </div>
 
             <div className={styles.priceContainer}>
-              <div className={styles.priceInstallment}>3x de R$ 105,99</div>
+              <div className={styles.priceInstallment}>3x de R$ 34,62</div>
               <div className={styles.priceInstallmentSub}>ou</div>
-              <div className={styles.priceCash}>• R$ 297 à vista</div>
+              <div className={styles.priceCash}>• R$ 97 à vista</div>
             </div>
 
             <div className={styles.offerIncludes}>
               <h3>Plano Plus inclui:</h3>
               <ul>
                 <li>
-                  <CheckIcon size={16} className={styles.checkIcon} /> 3
-                  módulos
+                  <CheckIcon size={16} className={styles.checkIcon} /> 3 módulos
                 </li>
                 <li>
-                  <CheckIcon size={16} className={styles.checkIcon} /> Bônus
-                  +1 módulo
+                  <CheckIcon size={16} className={styles.checkIcon} /> Bônus +1
+                  módulo
                 </li>
                 <li>
-                  <CheckIcon size={16} className={styles.checkIcon} /> 12
+                  <CheckIcon size={16} className={styles.checkIcon} /> 12 vídeos
+                </li>
+                <li>
+                  <CheckIcon size={16} className={styles.checkIcon} /> Bônus +4
                   vídeos
-                </li>
-                <li>
-                  <CheckIcon size={16} className={styles.checkIcon} /> Bônus
-                  +4 vídeos
                 </li>
                 <li>
                   <CheckIcon size={16} className={styles.checkIcon} /> Acesso
